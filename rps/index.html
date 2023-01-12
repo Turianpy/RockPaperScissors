@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="rps.css">
+    </head>
+    <body>
+        <header>
+            <h1>rock</h1>
+            <h1>paper</h1>
+            <h1>scissors</h1>
+        </header>
+        <main>
+            <div class="flex-cont">
+                <div class="choices">
+                    <div id="rock">
+                        <img src="images/rock--left.png" alt="rock" style="--order: 1">
+                    </div>
+                    <div id="paper">
+                        <img src="images/paper--left.png" alt="paper" style="--order: 3">
+                    </div>
+                    <div id="scissors">
+                        <img src="images/scissors--left.png" alt="scissors" style="--order: 2">
+                    </div>
+                </div>
+                <div class="score">
+                    <p id="score">
+                        <span id="p-score"></span><span id="c-score"></span>
+                    </p>
+                </div>
+                <div class="info">
+                    <div class="rounds">
+                        <p id="rounds"></p>
+                    </div>
+                    <div class="player-choice">
+                        <p id="player-choice"></p>
+                    </div>
+                    <div class="computer-choice">
+                        <p id="computer-choice"></p>
+                    </div>
+                </div>
+                <div class="winner">
+                    <p id="winner"></p>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script src="rps.js"></script>
+</html>
