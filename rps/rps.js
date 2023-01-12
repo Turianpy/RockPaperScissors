@@ -6,6 +6,8 @@ const cChoice = document.getElementById('computer-choice')
 const winner = document.getElementById('winner')
 const rounds = document.getElementById('rounds')
 const images = document.querySelectorAll('img')
+const cta = document.querySelector('.calltoaction')
+const container = document.querySelector('.flex-cont')
 
 let roundsPlayed = 1;
 
@@ -20,7 +22,15 @@ function reset() {
         'c-score': 0
     }
     roundsPlayed = 0;
-    pScore.textContent = cScore.textContent = ''
+    clearText = [pScore, cScore, pChoice, cChoice, winner, rounds]
+    for (elem of clearText) {
+        elem.textContent = ''
+    }
+
+    cta.setAttribute('style', 'display: block;')
+    pScore.textContent = cScore.textContent = winner.textContent = rounds.textContent = cChoice.textContent = ''
+    pChoice.textContent = ''
+    cta.textContent = 'Make your choice!'
 }
 
 function getComputerChoice() {
@@ -30,6 +40,8 @@ function getComputerChoice() {
 }
 
 function rps_round(playerSelection, computerSelection, curScore) {
+
+    cta.setAttribute('style', 'display: none;');
 
     rounds.textContent = `Round ${roundsPlayed}`
 
@@ -70,18 +82,18 @@ const paperBtn = document.querySelector('#paper img')
 const scissorsBtn = document.querySelector('#scissors img')
 
 rockBtn.addEventListener('click', () => {
-    rps_round('rock', getComputerChoice(), score)
     pChoice.textContent = 'You chose rock'
+    rps_round('rock', getComputerChoice(), score)
 })
 
 paperBtn.addEventListener('click', () => {
-    rps_round('paper', getComputerChoice(), score)
     pChoice.textContent = 'You chose paper'
+    rps_round('paper', getComputerChoice(), score)
 })
 
 scissorsBtn.addEventListener('click', () => {
-    rps_round('scissors', getComputerChoice(), score)
     pChoice.textContent = 'You chose scissors'
+    rps_round('scissors', getComputerChoice(), score)
 })
 
 winner.addEventListener('gameover', function handler(e) {
